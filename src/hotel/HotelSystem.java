@@ -87,28 +87,11 @@ public class HotelSystem {
      */
     public ArrayList<Room> findAvailableRooms(Calendar startDate, Calendar endDate, Room.RoomType roomType) {
         ArrayList<Room> temp = reservationDatabase.queryDatabase(startDate, endDate, roomType);
-        ArrayList<Room> results = new ArrayList<Room>();
-        if(temp.size()!=0)
-        {
-            for(int i=0;i<allRooms.size();i++)
-            {
-                for(int j=0;j<temp.size();j++)
-                {
-                    if((allRooms.get(i).roomType == roomType)&&(allRooms.get(i).getRoomNumber() != temp.get(j).getRoomNumber()))
-                    {
-                        results.add(allRooms.get(i));
-                    }
-                }
-            }
-        }else{
-            for(int i=0;i<allRooms.size();i++)
-            {
-                if(allRooms.get(i).getRoomType() == roomType)
-                {
-                    results.add(allRooms.get(i));
-                }
-            }
-        }
+        ArrayList<Room> results = allRooms;
+        
+        for (Room room : temp)
+            results.remove(room);
+        
         return results;
     }
     
@@ -123,10 +106,16 @@ public class HotelSystem {
      */
     public Room findAvailableRoom(Calendar startDate, Calendar endDate, Room.RoomType roomType) {
         ArrayList<Room> notAvailable = reservationDatabase.queryDatabase(startDate, endDate, roomType);
+        ArrayList<Integer> notAvailableRoomNumber = new ArrayList<>();
         
-        for (Room room : allRooms)
-            if (room.roomType == roomType && !notAvailable.contains(room))
+        for (Room room : notAvailable) {
+            notAvailableRoomNumber.add(room.getRoomNumber());
+        }
+        
+        for (Room room : allRooms) {
+            if (room.roomType == roomType && !notAvailableRoomNumber.contains(room.getRoomNumber()))
                 return room;
+            }
         
         return null;
     }
@@ -163,15 +152,6 @@ public class HotelSystem {
         return reservationDatabase.queryDatabase(firstName, lastName);
     }
     
-    public boolean checkReservationDateModification(Calendar startDate, Calendar endDate, int roomNum, String resNum){
-        ArrayList<Room> temp;
-        temp = reservationDatabase.queryDatabase(startDate, endDate, roomNum, resNum);
-        if(temp == null)
-            return true;
-        else
-            return false;
-    }
-    
     /**
      * Modifies the reservation in the database.
      * @param reservation 
@@ -205,6 +185,10 @@ public class HotelSystem {
         return (reservationDatabase.queryDatabase(reservation) != null);
     }  
 
+    /**
+     * Returns all the rooms
+     * @return ArrayList of room objects
+     */
     public ArrayList<Room> getAllRooms() {
         return allRooms;
     }

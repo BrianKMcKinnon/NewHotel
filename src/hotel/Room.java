@@ -25,7 +25,7 @@ public class Room {
         /**
          * Obtains given roomType as an int
          * @param roomType
-         * @return 
+         * @return a corresponding integer for the given room type
          */
         public static int valueOf(RoomType roomType) {
             switch (roomType) {
@@ -44,7 +44,6 @@ public class Room {
 
         /**
          * Obtains the name of room roomType
-         *
          * @param input
          * @return the name of room roomType
          */
@@ -66,7 +65,6 @@ public class Room {
 
     /**
      * Class constructor
-     *
      * @param roomNumber
      * @param type
      */
@@ -93,7 +91,6 @@ public class Room {
 
     /**
      * Obtains a room number
-     *
      * @return room number
      */
     public int getRoomNumber() {
@@ -102,7 +99,6 @@ public class Room {
 
     /**
      * Obtains a room cost
-     *
      * @return room cost
      */
     public double getCost() {
@@ -111,7 +107,6 @@ public class Room {
 
     /**
      * Obtains a roomType of a room
-     *
      * @return roomType of a room
      */
     public RoomType getRoomType() {

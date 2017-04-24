@@ -26,17 +26,17 @@ public class ModifyFoundRoomResult extends javax.swing.JFrame {
         this.newReservation = newReservation;
         
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        startDate_label.setText(dateFormat.format(newReservation.getStartDate().getTime()));
-        endDate_label.setText(dateFormat.format(newReservation.getEndDate().getTime()));
-        rate_label.setText(Double.toString(newReservation.getRoom().getCost()));
-        roomType_label.setText(newReservation.getRoom().roomType.toString());
+        startDate_label.setText(dateFormat.format(currentReservation.getStartDate().getTime()));
+        endDate_label.setText(dateFormat.format(currentReservation.getEndDate().getTime()));
+        rate_label.setText(Double.toString(currentReservation.getRoom().getCost()));
+        roomType_label.setText(currentReservation.getRoom().roomType.toString());
         
         double totalCost = currentReservation.getReservationTotal();
         double newTotal = newReservation.getReservationTotal();
         
         totalCost_label.setText(Double.toString(totalCost));
         newTotal_label.setText(Double.toString(newTotal));
-        difference_label.setText(Double.toString(newTotal - totalCost));
+        difference_label.setText(Double.toString(totalCost - newTotal));
     }
 
     /**

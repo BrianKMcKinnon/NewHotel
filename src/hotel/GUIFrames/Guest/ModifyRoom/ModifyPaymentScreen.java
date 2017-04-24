@@ -28,8 +28,6 @@ public class ModifyPaymentScreen extends javax.swing.JFrame {
         
         this.currentReservation = currentReservation;
         this.newReservation = newReservation;
-        
-        amountOwed_label.setText(Double.toString(newReservation.getReservationTotal() - currentReservation.getReservationTotal()));
     }
 
     /**
@@ -199,9 +197,7 @@ public class ModifyPaymentScreen extends javax.swing.JFrame {
         if (Payment.checkPayment(ccNumber.getText()))
         {
             newReservation.setName(firstName_textField.getText(), lastName_textField.getText());
-            HotelSystem.getInstance().removeReservation(currentReservation);
-            HotelSystem.getInstance().makeReservation(newReservation);
-            
+            HotelSystem.getInstance().changeReservation(newReservation);
 
             ReservationCode frame = new ReservationCode(newReservation);
             frame.setLocationRelativeTo(this);

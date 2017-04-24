@@ -23,15 +23,21 @@ public class ReservationListResults extends javax.swing.JFrame {
      */
     ReservationListResults(String resCode) {
         initComponents();
+        System.out.println("in res code constructor");
+        ArrayList<Reservation> temp = new ArrayList<Reservation>();
+        temp.add(HotelSystem.getInstance().lookUpReservation(resCode));
+        setList(temp);
     }
 
     ReservationListResults(String firstName, String lastName) {
         initComponents();
+        System.out.println("in first/last name constructor");
         setList(HotelSystem.getInstance().lookUpReservation(firstName, lastName));
     }
 
     ReservationListResults(Calendar startDate, Calendar endDate) {
         initComponents();
+        System.out.println("in Calendar constructor");
         setList(HotelSystem.getInstance().lookUpReservation(startDate, endDate));
     }
 
@@ -53,6 +59,7 @@ public class ReservationListResults extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,6 +91,8 @@ public class ReservationListResults extends javax.swing.JFrame {
 
         jButton3.setText("Modify");
 
+        jLabel5.setText("Dates");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,18 +100,6 @@ public class ReservationListResults extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addGap(150, 150, 150)
-                                        .addComponent(jLabel4))
-                                    .addComponent(jLabel2))))
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 10, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,7 +109,21 @@ public class ReservationListResults extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1)))))
+                                .addComponent(jButton1))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel4))
+                                    .addComponent(jLabel2))
+                                .addGap(95, 95, 95)
+                                .addComponent(jLabel5)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -125,7 +136,8 @@ public class ReservationListResults extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
@@ -150,11 +162,8 @@ public class ReservationListResults extends javax.swing.JFrame {
         
         for (int i = 0; i < reservations.size(); i++)
         {
-            s_reservations[i] = Integer.toString(reservations.get(i).getRoom().getRoomNumber()) + "/t" +
-                                reservations.get(i).getFirstName() + " " +
-                                reservations.get(i).getLastName() + "/t" +
-                                sdf.format(reservations.get(i).getStartDate()) + " " +
-                                sdf.format(reservations.get(i).getEndDate());
+            //SHITS BROKE YOOO
+            s_reservations[i] = String.format("%-10s %-15s %-3s %-10s - %-10s", reservations.get(i).getFirstName(), reservations.get(i).getLastName(), Integer.toString(reservations.get(i).getRoom().getRoomNumber()), sdf.format(reservations.get(i).getStartDate().getTime()), sdf.format(reservations.get(i).getEndDate().getTime()));                             
         }
         reservation_List.setListData(s_reservations);
     }
@@ -167,6 +176,7 @@ public class ReservationListResults extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> reservation_List;
     // End of variables declaration//GEN-END:variables

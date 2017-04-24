@@ -24,13 +24,13 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace pref="87" max="32767" attributes="0"/>
+              <EmptySpace pref="96" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="jLabel1" alignment="2" min="-2" pref="217" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="2" min="-2" pref="283" max="-2" attributes="0"/>
                   <Component id="guestHome_Button" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="employeeHome_Button" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

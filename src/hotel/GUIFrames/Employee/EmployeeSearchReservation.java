@@ -155,7 +155,9 @@ public class EmployeeSearchReservation extends javax.swing.JFrame {
         String lastName = lastName_textField.getText();
         String resCode = reservationCode_textField.getText();
         
-        if (resCode != "")
+       System.out.println("###" + resCode + "###");
+        
+        if (!resCode.isEmpty())
         {
             ReservationListResults frame = new ReservationListResults(resCode);
             frame.setLocationRelativeTo(this);
@@ -163,7 +165,7 @@ public class EmployeeSearchReservation extends javax.swing.JFrame {
             frame.setVisible(true);
         }
         
-        else if (firstName != "" && lastName != "")
+        else if (!firstName.isEmpty() && !lastName.isEmpty())
         {
             ReservationListResults frame = new ReservationListResults(firstName, lastName);
             frame.setLocationRelativeTo(this);

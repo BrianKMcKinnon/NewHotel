@@ -136,11 +136,9 @@ public class ReservationDatabase
         String s_startDate = dateFormat.format(startDate.getTime());
         String s_endDate = dateFormat.format(endDate.getTime());
                 
-        String query = "SELECT * FROM RESERVATIONS WHERE (((STARTDATE >= '" + s_startDate + "') AND "
-                + "(STARTDATE <= '" + s_endDate + "')) OR ((ENDDATE >= '" + s_startDate + "') AND "
-                + "(ENDDATE <= '" + s_endDate + "')) OR ((STARTDATE <= '" + s_startDate + "') AND "
-                + "(ENDDATE >= '" + s_endDate + "')) OR ((STARTDATE >= '" + s_startDate + "') AND "
-                + "(ENDDATE <= '" + s_endDate + "'))) AND (ROOMTYPE = "
+        // PROBLEM IS IN QUERY!!!! NOT SELECTING CORRECTLY
+        String query = "SELECT * FROM RESERVATIONS WHERE (STARTDATE <= '" + s_startDate + "') AND "
+                + "(ENDDATE >= '" + s_endDate + "') AND (ROOMTYPE = "
                 + Room.RoomType.valueOf(roomType) + ")";
         System.out.println(query);        
     
@@ -152,7 +150,6 @@ public class ReservationDatabase
                 while (resultSet.next()) {
                     Room room = new Room(resultSet.getInt(4), Room.RoomType.valueOf(resultSet.getInt("ROOMTYPE")));
                     takenRooms.add(new Room(resultSet.getInt(4), Room.RoomType.valueOf(resultSet.getInt("ROOMTYPE"))));
-                    System.out.println(Integer.toString(resultSet.getInt(4)));
                 }
             }
             
@@ -160,43 +157,11 @@ public class ReservationDatabase
                 e.printStackTrace();
             }
         }
-        
+        System.out.print("Taken Rooms Size: ");
+        System.out.println(takenRooms.size());
         return takenRooms;
     }    
     
-    public ArrayList<Room> queryDatabase(Calendar startDate, Calendar endDate, int roomNum, String resNum) {
-        ArrayList<Room> takenRooms = new ArrayList<>();
-        
-        String s_startDate = dateFormat.format(startDate.getTime());
-        String s_endDate = dateFormat.format(endDate.getTime());
-                
-        String query = "SELECT * FROM RESERVATIONS WHERE (((STARTDATE >= '" + s_startDate + "') AND "
-                + "(STARTDATE <= '" + s_endDate + "')) OR ((ENDDATE >= '" + s_startDate + "') AND "
-                + "(ENDDATE <= '" + s_endDate + "')) OR ((STARTDATE <= '" + s_startDate + "') AND "
-                + "(ENDDATE >= '" + s_endDate + "')) OR ((STARTDATE >= '" + s_startDate + "') AND "
-                + "(ENDDATE <= '" + s_endDate + "'))) AND (ROOMNUMBER = "
-                + roomNum + ") AND (RESERVATION != '"
-                + resNum + "')";
-        System.out.println(query);        
-    
-        if (connection != null) {
-            try {
-                Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery(query);
-                                
-                while (resultSet.next()) {
-                    takenRooms.add(new Room(resultSet.getInt(4), Room.RoomType.valueOf(resultSet.getInt("ROOMTYPE"))));
-                    System.out.println(Integer.toString(resultSet.getInt(4)));
-                }
-            }
-            
-            catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        
-        return takenRooms;
-    }
     
     /**
      * Returns Reservation
@@ -362,11 +327,11 @@ public class ReservationDatabase
         String startDate = dateFormat.format(reservation.getStartDate().getTime());
         String endDate = dateFormat.format(reservation.getEndDate().getTime());
         
-        String query = "UPDATE RESERVATIONs SET STARTDATE = '" + startDate
+        String query = "UPDATE RESERVATIONS SET STARTDATE = '" + startDate
                 + "', ENDDATE = '"  + endDate
                 + "', ROOMNUMBER = "+ Integer.toString(reservation.getRoom().getRoomNumber())
-                + ", RATE = "       + Double.toString(reservation.getRoom().getCost())
-                + ", TOTAL = "      + Double.toString(reservation.getReservationTotal())
+                + ", ROOMRATE = "       + Double.toString(reservation.getRoom().getCost())
+                + ", ROOMTOTAL = "      + Double.toString(reservation.getReservationTotal())
                 + ", FIRSTNAME = '" + reservation.getFirstName()
                 + "', LASTNAME = '"  + reservation.getLastName() 
                 + "' WHERE RESERVATION = '" + reservation.getReservationCode() + "'";

@@ -7,6 +7,7 @@ package hotel.GUIFrames;
 
 import hotel.GUIFrames.Employee.EmployeeHome;
 import hotel.GUIFrames.Guest.GuestHome;
+import hotel.HotelSystem;
 
 /**
  *
@@ -62,12 +63,12 @@ public class Welcome extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(87, Short.MAX_VALUE)
+                .addContainerGap(96, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(guestHome_Button)
                     .addComponent(employeeHome_Button))
-                .addGap(96, 96, 96))
+                .addGap(90, 90, 90))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,6 +128,8 @@ public class Welcome extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        
+        HotelSystem hotelSystem = HotelSystem.initializeSystem(200);
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

@@ -12,9 +12,9 @@ public class Reservation {
     
     // Variables 
     private String reservationCode;
-    private Room room;
-    private Calendar startDate;
-    private Calendar endDate;
+    private final Room room;
+    private final Calendar startDate;
+    private final Calendar endDate;
     private String firstName;
     private String lastName;
     
@@ -66,7 +66,6 @@ public class Reservation {
         }
     }
     
-    
     /**
      * Obtains reservation code.
      * @return a reservation code
@@ -75,7 +74,6 @@ public class Reservation {
         return reservationCode;
     }    
 
-    
      /**
      * Obtains a room object for the specific reservation
      * @return a room object
@@ -83,9 +81,7 @@ public class Reservation {
     public Room getRoom() {
         return room;
     }
-    public void setRoom(Room newRoom){
-        room = newRoom;
-    }
+    
     /**
      * Obtains a start date of the specific reservation
      * @return a start date
@@ -96,10 +92,6 @@ public class Reservation {
         return clone;   //return shallow copy of date
     }
     
-    public void setStartDate(Calendar s){
-        startDate = (Calendar) s.clone();
-    }
-    
     /**
      * Obtains an end date of the specific reservation
      * @return an ending date
@@ -108,10 +100,6 @@ public class Reservation {
         Calendar clone = Calendar.getInstance();
         clone = (Calendar)endDate.clone();
         return clone;
-    }
-    
-    public void setEndDate(Calendar e){
-        endDate = (Calendar) e.clone();
     }
     
     /**

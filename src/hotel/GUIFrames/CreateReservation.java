@@ -200,9 +200,9 @@ public class CreateReservation extends javax.swing.JFrame {
         else 
         {
             try {
-                ArrayList<Room> foundRooms = HotelSystem.getInstance().findAvailableRooms(startDate_Chooser.getCalendar(), endDate_Chooser.getCalendar(), Room.RoomType.valueOf(roomType_Chooser.getSelectedValue().toUpperCase()));                           
+                Room foundRoom = HotelSystem.getInstance().findAvailableRoom(startDate_Chooser.getCalendar(), endDate_Chooser.getCalendar(), Room.RoomType.valueOf(roomType_Chooser.getSelectedValue().toUpperCase()));                           
                 
-                Reservation tempRes = new Reservation(foundRooms.get(0), startDate_Chooser.getCalendar(), endDate_Chooser.getCalendar(), "First", "Last");
+                Reservation tempRes = new Reservation(foundRoom, startDate_Chooser.getCalendar(), endDate_Chooser.getCalendar(), "First", "Last");
                                 
                 FoundRoomResults frame = new FoundRoomResults(tempRes);
                 frame.setLocationRelativeTo(this);

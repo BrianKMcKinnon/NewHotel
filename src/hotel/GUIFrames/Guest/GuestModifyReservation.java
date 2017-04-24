@@ -27,11 +27,13 @@ public class GuestModifyReservation extends javax.swing.JFrame {
     public GuestModifyReservation(Reservation reservation) {
         initComponents();
         this.currentReservation = reservation;
-        String[] roomTypes = { "Suite", "King", "Queen", "Single", "No Preference" };
-        roomType_Chooser.setListData(roomTypes);
-        roomType_Chooser.setSelectedIndex(Room.RoomType.valueOf(reservation.getRoom().getRoomType()));
+        
         startDate_Chooser.setCalendar(reservation.getStartDate());
         endDate_Chooser.setCalendar(reservation.getEndDate());
+        roomType_Chooser.setSelectedIndex(Room.RoomType.valueOf(reservation.getRoom().getRoomType()));
+        
+        String[] roomTypes = { "Suite", "King", "Queen", "Single", "No Preference" };
+        roomType_Chooser.setListData(roomTypes);
         roomType_Chooser.setSelectedIndex(Room.RoomType.valueOf(reservation.getRoom().getRoomType()));
     }
 
@@ -187,63 +189,22 @@ public class GuestModifyReservation extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Start Date must be before End Date");
         else 
         {
-            Reservation newReservation = HotelSystem.getInstance().lookUpReservation(currentReservation.getReservationCode());
-            if(((startDate_Chooser.getCalendar() != currentReservation.getStartDate())||(endDate_Chooser.getCalendar() != currentReservation.getEndDate()))&&(roomType_Chooser.getSelectedIndex() == Room.RoomType.valueOf(currentReservation.getRoom().getRoomType()))){
-                //If the date is the only thing that changed
-                if(HotelSystem.getInstance().checkReservationDateModification(startDate_Chooser.getCalendar(), endDate_Chooser.getCalendar(), currentReservation.getRoom().getRoomNumber(), currentReservation.getReservationCode())){
-                    // If the current room is available for the new dates
-                    System.out.println("Case1");
-                    newReservation.setStartDate(startDate_Chooser.getCalendar());
-                    newReservation.setEndDate(endDate_Chooser.getCalendar());
-                }
-                else{
-                    System.out.println("Case2");
-                    ArrayList<Room> newRoom = HotelSystem.getInstance().findAvailableRooms(startDate_Chooser.getCalendar(), endDate_Chooser.getCalendar(), Room.RoomType.valueOf(roomType_Chooser.getSelectedIndex()));
-                    newReservation.setRoom(newRoom.get(0));
-                    newReservation.setStartDate(startDate_Chooser.getCalendar());
-                    newReservation.setEndDate(endDate_Chooser.getCalendar());
-                }
+            ArrayList<Room> foundRooms = HotelSystem.getInstance().findAvailableRooms(startDate_Chooser.getCalendar(), endDate_Chooser.getCalendar(), Room.RoomType.valueOf(roomType_Chooser.getSelectedIndex()));
+            if (foundRooms != null)
+            {
+                Reservation newReservation = new Reservation(foundRooms.get(0), startDate_Chooser.getCalendar(), endDate_Chooser.getCalendar(), "First", "Last");
                 
+                ModifyFoundRoomResult frame = new ModifyFoundRoomResult(currentReservation, newReservation);
+                frame.setLocationRelativeTo(this);
+                this.setVisible(false);
+                frame.setVisible(true);
             }
-            else{
-                    System.out.println("Case3");
-                    ArrayList<Room> newRoom = HotelSystem.getInstance().findAvailableRooms(startDate_Chooser.getCalendar(), endDate_Chooser.getCalendar(), Room.RoomType.valueOf(roomType_Chooser.getSelectedIndex()));
-                    newReservation.setRoom(newRoom.get(0));
-                    newReservation.setStartDate(startDate_Chooser.getCalendar());
-                    newReservation.setEndDate(endDate_Chooser.getCalendar());
-                }
-            ModifyFoundRoomResult frame = new ModifyFoundRoomResult(currentReservation, newReservation);
-            frame.setLocationRelativeTo(this);
-            this.setVisible(false);
-            frame.setVisible(true);
-        }
             
-//            ModifyFoundRoomResult frame = new ModifyFoundRoomResult(currentReservation, newReservation);
-//            frame.setLocationRelativeTo(this);
-//            this.setVisible(false);
-//            frame.setVisible(true);
-//            
-//            ArrayList<Room> foundRooms = HotelSystem.getInstance().findAvailableRooms(startDate_Chooser.getCalendar(), endDate_Chooser.getCalendar(), Room.RoomType.valueOf(roomType_Chooser.getSelectedIndex()));
-//            if (foundRooms != null)
-//            {
-//                System.out.println("foundRooms != null");
-//                Reservation newReservation = new Reservation(foundRooms.get(0), startDate_Chooser.getCalendar(), endDate_Chooser.getCalendar(), "First", "Last");
-//                // if newRes has a startDate AND duration of stay isn't the same AND 
-//                if (newReservation.getStartDate() != null && currentReservation.getDurationOfStay() != newReservation.getDurationOfStay() && currentReservation.getRoom().getRoomType() != currentReservation.getRoom().getRoomType())
-//                {
-//                    System.out.println("before Modifyfoundroomresult");
-//                    ModifyFoundRoomResult frame = new ModifyFoundRoomResult(currentReservation, newReservation);
-//                    frame.setLocationRelativeTo(this);
-//                    this.setVisible(false);
-//                    frame.setVisible(true);
-//                }
-//            }
-//            
-//            else
-//            {
-//                JOptionPane.showMessageDialog(null, "There are no available rooms with the given parameters.");
-//            }
-//        }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "There are no available rooms with the given parameters.");
+            }
+        }
     }//GEN-LAST:event_modifyRooms_ButtonActionPerformed
 
     /**
