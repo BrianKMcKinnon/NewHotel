@@ -15,11 +15,16 @@ public class Payment {
     }
     
     /**
-     * Returns whether or not the credit card number is valid (valid if has 16 digits)
-     * @param creditCard    String of digits of a credit card
+     * Shows the acknowledgment of a payment class.
+     * @param ccNumber
+     * @param fName
+     * @param lName
+     * @param crv
+     * @param expMonth
+     * @param expYear
      * @return boolean if payment is valid
      */
-    public static boolean checkPayment(String creditCard){
-        return (creditCard.length() == 16);
+    public static boolean checkPayment(String fName, String lName, String ccNumber, String crv, int expMonth, int expYear) {        
+        return (ccNumber.length() == 16 && fName != "" && lName != "" && crv.length() == 3);
     }
 }

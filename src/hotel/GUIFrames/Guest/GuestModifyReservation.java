@@ -46,6 +46,7 @@ public class GuestModifyReservation extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        findRooms_Button1 = new javax.swing.JButton();
         home_Button = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         roomType_Chooser = new javax.swing.JList<>();
@@ -56,9 +57,17 @@ public class GuestModifyReservation extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        findRooms_Button1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(400, 304));
+        setResizable(false);
+
+        findRooms_Button1.setText("Modify Reservation");
+        findRooms_Button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                findRooms_Button1modifyRooms_ButtonActionPerformed(evt);
+            }
+        });
 
         home_Button.setText("Home");
         home_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -90,18 +99,14 @@ public class GuestModifyReservation extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Book a Reservation");
 
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel3.setText("Start Date");
 
+        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel4.setText("End Date");
 
+        jLabel5.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel5.setText("Room Type");
-
-        findRooms_Button1.setText("Modify Reservation");
-        findRooms_Button1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyRooms_ButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,13 +114,13 @@ public class GuestModifyReservation extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(findRooms_Button1)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(home_Button))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,9 +141,9 @@ public class GuestModifyReservation extends javax.swing.JFrame {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(endDate_Chooser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
                                         .addComponent(startDate_Chooser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68))))
+                        .addGap(88, 88, 88))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,31 +152,53 @@ public class GuestModifyReservation extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(startDate_Chooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(endDate_Chooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(home_Button)
-                            .addComponent(findRooms_Button1))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                            .addComponent(findRooms_Button1)))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(99, 99, 99))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void findRooms_Button1modifyRooms_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findRooms_Button1modifyRooms_ButtonActionPerformed
+        if (startDate_Chooser.getCalendar().compareTo(endDate_Chooser.getCalendar()) > 0)   // Check if startDate is before endDate
+        JOptionPane.showMessageDialog(null, "Start Date must be before End Date");
+        else
+        {
+            ArrayList<Room> foundRooms = HotelSystem.getInstance().findAvailableRooms(startDate_Chooser.getCalendar(), endDate_Chooser.getCalendar(), Room.RoomType.valueOf(roomType_Chooser.getSelectedIndex()));
+            if (foundRooms != null)
+            {
+                Reservation newReservation = new Reservation(foundRooms.get(0), startDate_Chooser.getCalendar(), endDate_Chooser.getCalendar(), "First", "Last");
+
+                ModifyFoundRoomResult frame = new ModifyFoundRoomResult(currentReservation, newReservation);
+                frame.setLocationRelativeTo(this);
+                this.setVisible(false);
+                frame.setVisible(true);
+            }
+
+            else
+            {
+                JOptionPane.showMessageDialog(null, "There are no available rooms with the given parameters.");
+            }
+        }
+    }//GEN-LAST:event_findRooms_Button1modifyRooms_ButtonActionPerformed
 
     private void home_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home_ButtonActionPerformed
         Welcome frame = new Welcome();
@@ -183,29 +210,6 @@ public class GuestModifyReservation extends javax.swing.JFrame {
     private void roomType_ChooserAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_roomType_ChooserAncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_roomType_ChooserAncestorAdded
-
-    private void modifyRooms_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyRooms_ButtonActionPerformed
-        if (startDate_Chooser.getCalendar().compareTo(endDate_Chooser.getCalendar()) > 0)   // Check if startDate is before endDate
-            JOptionPane.showMessageDialog(null, "Start Date must be before End Date");
-        else 
-        {
-            ArrayList<Room> foundRooms = HotelSystem.getInstance().findAvailableRooms(startDate_Chooser.getCalendar(), endDate_Chooser.getCalendar(), Room.RoomType.valueOf(roomType_Chooser.getSelectedIndex()));
-            if (foundRooms != null)
-            {
-                Reservation newReservation = new Reservation(foundRooms.get(0), startDate_Chooser.getCalendar(), endDate_Chooser.getCalendar(), "First", "Last");
-                
-                ModifyFoundRoomResult frame = new ModifyFoundRoomResult(currentReservation, newReservation);
-                frame.setLocationRelativeTo(this);
-                this.setVisible(false);
-                frame.setVisible(true);
-            }
-            
-            else
-            {
-                JOptionPane.showMessageDialog(null, "There are no available rooms with the given parameters.");
-            }
-        }
-    }//GEN-LAST:event_modifyRooms_ButtonActionPerformed
 
     /**
      * @param args the command line arguments

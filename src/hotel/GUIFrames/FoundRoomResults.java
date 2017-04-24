@@ -44,9 +44,11 @@ public class FoundRoomResults extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        home_Button = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        totalCost_label = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        rate_label = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -55,24 +57,25 @@ public class FoundRoomResults extends javax.swing.JFrame {
         endDate_label = new javax.swing.JLabel();
         roomType_label = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        totalCost_label = new javax.swing.JLabel();
-        rate_label = new javax.swing.JLabel();
+        home_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        home_Button.setText("Home");
-        home_Button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                home_ButtonActionPerformed(evt);
-            }
-        });
+        jLabel10.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jLabel10.setText("Total:");
 
         jLabel1.setFont(new java.awt.Font("Vivaldi", 1, 24)); // NOI18N
         jLabel1.setText("el Hotel");
 
+        totalCost_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        totalCost_label.setText("$400");
+
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Welcome Guest");
+
+        rate_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        rate_label.setText("$100");
 
         jButton1.setText("Confirm Booking");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -81,25 +84,33 @@ public class FoundRoomResults extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel3.setText("Check In Date:");
 
+        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel4.setText("Check Out Date:");
 
+        jLabel5.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel5.setText("Room Type:");
 
+        startDate_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         startDate_label.setText("October 15, 2017");
 
+        endDate_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         endDate_label.setText("October 19, 2017");
 
+        roomType_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         roomType_label.setText("King Size");
 
+        jLabel9.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel9.setText("Cost Per Night:");
 
-        jLabel10.setText("Total:");
-
-        totalCost_label.setText("$400");
-
-        rate_label.setText("$100");
+        home_Button.setText("Home");
+        home_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                home_ButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,27 +125,24 @@ public class FoundRoomResults extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
+                                        .addComponent(jLabel3)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(startDate_label))
+                                    .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel3)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(startDate_label))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel4)
-                                                    .addComponent(jLabel5)
-                                                    .addComponent(jLabel9)
-                                                    .addComponent(jLabel10))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(roomType_label)
-                                                    .addComponent(endDate_label)
-                                                    .addComponent(totalCost_label)
-                                                    .addComponent(rate_label))))))))
-                        .addGap(0, 185, Short.MAX_VALUE))
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabel9)
+                                            .addComponent(jLabel10))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(roomType_label)
+                                            .addComponent(endDate_label)
+                                            .addComponent(totalCost_label)
+                                            .addComponent(rate_label)))
+                                    .addComponent(jLabel2))))
+                        .addGap(0, 177, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton1)
@@ -149,7 +157,7 @@ public class FoundRoomResults extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(startDate_label))
@@ -169,7 +177,7 @@ public class FoundRoomResults extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(totalCost_label))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(home_Button)
                     .addComponent(jButton1))
@@ -179,19 +187,19 @@ public class FoundRoomResults extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void home_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home_ButtonActionPerformed
-        Welcome frame = new Welcome();
-        frame.setLocationRelativeTo(this);
-        this.setVisible(false);
-        frame.setVisible(true);
-    }//GEN-LAST:event_home_ButtonActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         PaymentScreen frame = new PaymentScreen(reservation);
         frame.setLocationRelativeTo(this);
         this.setVisible(false);
         frame.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void home_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home_ButtonActionPerformed
+        Welcome frame = new Welcome();
+        frame.setLocationRelativeTo(this);
+        this.setVisible(false);
+        frame.setVisible(true);
+    }//GEN-LAST:event_home_ButtonActionPerformed
 
     /**
      * @param args the command line arguments

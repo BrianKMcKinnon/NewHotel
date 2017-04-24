@@ -9,7 +9,6 @@ import hotel.GUIFrames.Guest.GuestModifyReservation;
 import hotel.HotelSystem;
 import hotel.Reservation;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,7 +31,7 @@ public class SingleReservationResults extends javax.swing.JFrame {
     private void setLabels() {
         firstName_label.setText(reservation.getFirstName());
         lastName_label.setText(reservation.getLastName());
-        reservationCode_label.setText(reservation.getReservationCode());
+        reservationCode_textField.setText(reservation.getReservationCode());
         roomType_label.setText(reservation.getRoom().getRoomType().name());
         
         SimpleDateFormat dateFormat = new SimpleDateFormat("EE, MMMMM dd, yyyy");
@@ -52,18 +51,18 @@ public class SingleReservationResults extends javax.swing.JFrame {
     private void initComponents() {
 
         home_Button1 = new javax.swing.JButton();
+        roomNumber_label = new javax.swing.JLabel();
+        roomType_label = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        home_Button = new javax.swing.JButton();
+        cancelReservation_Button = new javax.swing.JButton();
+        modifyReservation_Button = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        reservationCode_textField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         firstName_label = new javax.swing.JLabel();
         lastName_label = new javax.swing.JLabel();
         stayDuration_label = new javax.swing.JLabel();
-        roomNumber_label = new javax.swing.JLabel();
-        roomType_label = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        reservationCode_label = new javax.swing.JLabel();
-        home_Button = new javax.swing.JButton();
-        cancelReservation_Button = new javax.swing.JButton();
-        modifyReservation_Button = new javax.swing.JButton();
 
         home_Button1.setText("Home");
         home_Button1.addActionListener(new java.awt.event.ActionListener() {
@@ -73,26 +72,16 @@ public class SingleReservationResults extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Vivaldi", 1, 24)); // NOI18N
-        jLabel1.setText("el Hotel");
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Welcome Guest");
-
-        firstName_label.setText("Chandler");
-
-        lastName_label.setText("Davidson");
-
-        stayDuration_label.setText("October 15, 2017 until October 19, 2017");
-
+        roomNumber_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         roomNumber_label.setText("Room 217");
 
-        roomType_label.setText("King Size");
+        roomType_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        roomType_label.setText("KING");
 
+        jLabel8.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel8.setText("Reservation Code");
-
-        reservationCode_label.setText("aeuh839t39");
 
         home_Button.setText("Home");
         home_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -115,6 +104,25 @@ public class SingleReservationResults extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Vivaldi", 1, 24)); // NOI18N
+        jLabel1.setText("el Hotel");
+
+        reservationCode_textField.setEditable(false);
+        reservationCode_textField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        reservationCode_textField.setText("123456");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setText("Welcome Guest");
+
+        firstName_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        firstName_label.setText("Chandler");
+
+        lastName_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        lastName_label.setText("Davidson");
+
+        stayDuration_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        stayDuration_label.setText("October 15, 2017 until October 19, 2017");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -122,35 +130,32 @@ public class SingleReservationResults extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
+                                .addGap(10, 10, 10)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(firstName_label)
-                                    .addComponent(lastName_label)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(jLabel2))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(reservationCode_label))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(90, 90, 90)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(firstName_label)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lastName_label))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(roomNumber_label)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(roomType_label))
-                                    .addComponent(stayDuration_label))))
-                        .addGap(0, 104, Short.MAX_VALUE))
+                                        .addGap(57, 57, 57)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(stayDuration_label)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel8)
+                                                    .addComponent(roomNumber_label))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                                    .addComponent(roomType_label)
+                                                    .addComponent(reservationCode_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 61, Short.MAX_VALUE)
                         .addComponent(modifyReservation_Button)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cancelReservation_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -166,9 +171,9 @@ public class SingleReservationResults extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(firstName_label)
-                .addGap(18, 18, 18)
-                .addComponent(lastName_label)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(firstName_label)
+                    .addComponent(lastName_label))
                 .addGap(18, 18, 18)
                 .addComponent(stayDuration_label)
                 .addGap(18, 18, 18)
@@ -178,8 +183,8 @@ public class SingleReservationResults extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(reservationCode_label))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                    .addComponent(reservationCode_textField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(home_Button)
                     .addComponent(cancelReservation_Button)
@@ -190,6 +195,10 @@ public class SingleReservationResults extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void home_Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home_Button1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_home_Button1ActionPerformed
+
     private void home_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home_ButtonActionPerformed
         Welcome frame = new Welcome();
         frame.setLocationRelativeTo(this);
@@ -197,25 +206,21 @@ public class SingleReservationResults extends javax.swing.JFrame {
         frame.setVisible(true);
     }//GEN-LAST:event_home_ButtonActionPerformed
 
-    private void home_Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home_Button1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_home_Button1ActionPerformed
-
     private void cancelReservation_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelReservation_ButtonActionPerformed
-    int response = JOptionPane.showConfirmDialog(null, "Do you want to continue?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-    if (response == JOptionPane.YES_OPTION)
-    {
-        HotelSystem.getInstance().removeReservation(reservation);
-        JOptionPane.showMessageDialog(null, "Your booking has been removed");
-        home_ButtonActionPerformed(null);
-    }
+        int response = JOptionPane.showConfirmDialog(null, "Do you want to continue?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (response == JOptionPane.YES_OPTION)
+        {
+            HotelSystem.getInstance().removeReservation(reservation);
+            JOptionPane.showMessageDialog(null, "Your booking has been removed");
+            home_ButtonActionPerformed(null);
+        }
     }//GEN-LAST:event_cancelReservation_ButtonActionPerformed
 
     private void modifyReservation_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyReservation_ButtonActionPerformed
         GuestModifyReservation frame = new GuestModifyReservation(reservation);
-            frame.setLocationRelativeTo(this);
-            this.setVisible(false);
-            frame.setVisible(true);
+        frame.setLocationRelativeTo(this);
+        this.setVisible(false);
+        frame.setVisible(true);
     }//GEN-LAST:event_modifyReservation_ButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -228,7 +233,7 @@ public class SingleReservationResults extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel lastName_label;
     private javax.swing.JButton modifyReservation_Button;
-    private javax.swing.JLabel reservationCode_label;
+    private javax.swing.JTextField reservationCode_textField;
     private javax.swing.JLabel roomNumber_label;
     private javax.swing.JLabel roomType_label;
     private javax.swing.JLabel stayDuration_label;

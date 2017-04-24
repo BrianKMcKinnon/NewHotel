@@ -29,11 +29,27 @@ public class ReservationDatabase
         try{
             Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
             connection = DriverManager.getConnection("jdbc:derby://localhost:1527/RESERVATIONS");
+            //createTable();
            
         }catch(Exception e){
             System.out.println("Error opening connections: " + e);
             e.printStackTrace();
         }
+    }
+    
+    private void createTable() throws SQLException {
+        String sqlCreate = "CREATE TABLE IF NOT EXISTS " + "RESERVATIONS"
+                + " (RESERVATION    VARCHAR(10),"
+                + "  STARTDATE      DATE,"
+                + "  ENDDATE        DATE,"
+                + "  ROOMNUMBER     INTEGER,"
+                + "  ROOMRATE       REAL,"
+                + "  ROOMTOTAL      REAL,"
+                + "  FIRSTNAME      VARCHAR(10),"
+                + "  LASTNAME       VARCHAR(15),"
+                + "  ROOMTYPE       INTEGER)";
+        Statement stmt = connection.createStatement();
+        stmt.execute(sqlCreate);
     }
         
     /**

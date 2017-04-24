@@ -38,6 +38,8 @@ public class EmployeeHome extends javax.swing.JFrame {
         manage_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(400, 304));
+        setResizable(false);
 
         logout_Button.setText("Logout");
         logout_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -77,14 +79,6 @@ public class EmployeeHome extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(136, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(createReservation_Button)
-                    .addComponent(existingReservation_Button)
-                    .addComponent(logout_Button)
-                    .addComponent(manage_Button))
-                .addGap(133, 133, 133))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -94,6 +88,18 @@ public class EmployeeHome extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(136, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(createReservation_Button)
+                            .addComponent(existingReservation_Button)
+                            .addComponent(manage_Button))
+                        .addGap(133, 133, 133))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(logout_Button)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,9 +114,9 @@ public class EmployeeHome extends javax.swing.JFrame {
                 .addComponent(existingReservation_Button)
                 .addGap(18, 18, 18)
                 .addComponent(manage_Button)
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addComponent(logout_Button)
-                .addGap(23, 23, 23))
+                .addContainerGap())
         );
 
         pack();

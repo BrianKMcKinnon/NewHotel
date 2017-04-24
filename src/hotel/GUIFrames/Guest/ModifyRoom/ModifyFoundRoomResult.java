@@ -48,41 +48,27 @@ public class ModifyFoundRoomResult extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        home_Button = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        rate_label = new javax.swing.JLabel();
         confirmBooking_Button = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        newTotal_label = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        difference_label = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         startDate_label = new javax.swing.JLabel();
         endDate_label = new javax.swing.JLabel();
         roomType_label = new javax.swing.JLabel();
+        home_Button = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         totalCost_label = new javax.swing.JLabel();
+        rate_label = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        newTotal_label = new javax.swing.JLabel();
-        difference_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        home_Button.setText("Home");
-        home_Button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                home_ButtonActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Vivaldi", 1, 24)); // NOI18N
-        jLabel1.setText("el Hotel");
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Welcome Guest");
-
-        rate_label.setText("$100");
+        setResizable(false);
 
         confirmBooking_Button.setText("Confirm Booking");
         confirmBooking_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -91,31 +77,60 @@ public class ModifyFoundRoomResult extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Check In Date:");
-
-        jLabel4.setText("Check Out Date:");
-
-        jLabel5.setText("Room Type:");
-
-        startDate_label.setText("October 15, 2017");
-
-        endDate_label.setText("October 19, 2017");
-
-        roomType_label.setText("King Size");
-
-        jLabel9.setText("Cost Per Night:");
-
-        jLabel10.setText("Previous Total:");
-
-        totalCost_label.setText("$400");
-
-        jLabel6.setText("New Total:");
-
+        jLabel7.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel7.setText("Difference:");
 
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jLabel3.setText("Check In Date:");
+
+        newTotal_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         newTotal_label.setText("$600");
 
+        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jLabel4.setText("Check Out Date:");
+
+        difference_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         difference_label.setText("$200");
+
+        jLabel5.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jLabel5.setText("Room Type:");
+
+        startDate_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        startDate_label.setText("October 15, 2017");
+
+        endDate_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        endDate_label.setText("October 19, 2017");
+
+        roomType_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        roomType_label.setText("King Size");
+
+        home_Button.setText("Home");
+        home_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                home_ButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jLabel9.setText("Cost Per Night:");
+
+        jLabel1.setFont(new java.awt.Font("Vivaldi", 1, 24)); // NOI18N
+        jLabel1.setText("el Hotel");
+
+        jLabel10.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jLabel10.setText("Previous Total:");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setText("Welcome Guest");
+
+        totalCost_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        totalCost_label.setText("$400");
+
+        rate_label.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        rate_label.setText("$100");
+
+        jLabel6.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jLabel6.setText("New Total:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,27 +149,27 @@ public class ModifyFoundRoomResult extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(10, 10, 10)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel3)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(startDate_label))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel4)
-                                                    .addComponent(jLabel5)
-                                                    .addComponent(jLabel9)
-                                                    .addComponent(jLabel10)
-                                                    .addComponent(jLabel6)
-                                                    .addComponent(jLabel7))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(roomType_label)
-                                                    .addComponent(endDate_label)
-                                                    .addComponent(totalCost_label)
-                                                    .addComponent(rate_label)
-                                                    .addComponent(newTotal_label)
-                                                    .addComponent(difference_label))))))))
-                        .addGap(0, 185, Short.MAX_VALUE))
+                                            .addComponent(jLabel9)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel5))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(startDate_label)
+                                            .addComponent(endDate_label)
+                                            .addComponent(roomType_label)
+                                            .addComponent(rate_label))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel10)
+                                            .addComponent(jLabel6)
+                                            .addComponent(jLabel7))
+                                        .addGap(12, 12, 12)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(totalCost_label)
+                                            .addComponent(newTotal_label)
+                                            .addComponent(difference_label))))))
+                        .addGap(0, 20, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(confirmBooking_Button)
@@ -169,47 +184,53 @@ public class ModifyFoundRoomResult extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(startDate_label))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(endDate_label))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(roomType_label))
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(startDate_label))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(endDate_label))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(roomType_label)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(totalCost_label))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(newTotal_label))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(difference_label))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(rate_label))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(totalCost_label))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(newTotal_label))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(home_Button)
-                            .addComponent(confirmBooking_Button))
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(difference_label))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(home_Button)
+                    .addComponent(confirmBooking_Button))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void confirmBooking_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmBooking_ButtonActionPerformed
+        ModifyPaymentScreen frame = new ModifyPaymentScreen(currentReservation, newReservation);
+
+        frame.setLocationRelativeTo(this);
+        this.setVisible(false);
+        frame.setVisible(true);
+    }//GEN-LAST:event_confirmBooking_ButtonActionPerformed
 
     private void home_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home_ButtonActionPerformed
         Welcome frame = new Welcome();
@@ -217,13 +238,6 @@ public class ModifyFoundRoomResult extends javax.swing.JFrame {
         this.setVisible(false);
         frame.setVisible(true);
     }//GEN-LAST:event_home_ButtonActionPerformed
-
-    private void confirmBooking_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmBooking_ButtonActionPerformed
-        ModifyPaymentScreen frame = new ModifyPaymentScreen(currentReservation, newReservation);
-        frame.setLocationRelativeTo(this);
-        this.setVisible(false);
-        frame.setVisible(true);
-    }//GEN-LAST:event_confirmBooking_ButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton confirmBooking_Button;

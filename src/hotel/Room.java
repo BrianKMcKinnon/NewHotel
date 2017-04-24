@@ -13,7 +13,7 @@ public class Room {
 
     // Variables
     private final int roomNumber;
-    private final double roomCost;
+    private double roomCost;
     public final RoomType roomType;
 
     /**
@@ -87,6 +87,17 @@ public class Room {
             default:
                 return 100;
         }
+    }
+    
+    public static void setTypeCost(RoomType roomType, double cost) {
+        for (Room room : HotelSystem.getInstance().getAllRooms()) {
+            if (room.getRoomType() == roomType)
+                room.setCost(cost);
+        }
+    }
+    
+    private void setCost(double cost) {
+        roomCost = cost;
     }
 
     /**
