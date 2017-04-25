@@ -26,6 +26,7 @@ public class PaymentScreen extends javax.swing.JFrame {
     public PaymentScreen(Reservation res) {
         initComponents();
         reservation = res;
+        amountOwed_label.setText("$" + Double.toString(reservation.getReservationTotal()));
     }
 
     /**

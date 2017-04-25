@@ -29,7 +29,6 @@ public class ReservationDatabase
         try{
             Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
             connection = DriverManager.getConnection("jdbc:derby://localhost:1527/RESERVATIONS");
-            //createTable();
            
         }catch(Exception e){
             System.out.println("Error opening connections: " + e);

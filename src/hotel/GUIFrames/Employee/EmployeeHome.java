@@ -124,24 +124,30 @@ public class EmployeeHome extends javax.swing.JFrame {
 
     private void logout_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_ButtonActionPerformed
         Welcome frame = new Welcome();
+        frame.setLocationRelativeTo(this);
         this.setVisible(false);
         frame.setVisible(true);
     }//GEN-LAST:event_logout_ButtonActionPerformed
 
     private void createReservation_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createReservation_ButtonActionPerformed
         CreateReservation frame = new CreateReservation();
+        frame.setLocationRelativeTo(this);
         this.setVisible(false);
         frame.setVisible(true);
     }//GEN-LAST:event_createReservation_ButtonActionPerformed
 
     private void existingReservation_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_existingReservation_ButtonActionPerformed
         EmployeeSearchReservation frame = new EmployeeSearchReservation();
+        frame.setLocationRelativeTo(this);
         this.setVisible(false);
         frame.setVisible(true);
     }//GEN-LAST:event_existingReservation_ButtonActionPerformed
 
     private void manage_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manage_ButtonActionPerformed
-        
+        Manage frame = new Manage();
+        frame.setLocationRelativeTo(this);
+        this.setVisible(false);
+        frame.setVisible(true);
     }//GEN-LAST:event_manage_ButtonActionPerformed
 
     /**

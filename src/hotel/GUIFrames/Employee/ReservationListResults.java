@@ -5,6 +5,7 @@
  */
 package hotel.GUIFrames.Employee;
 
+import hotel.GUIFrames.Welcome;
 import hotel.HotelSystem;
 import hotel.ReservationDatabase;
 import hotel.Reservation;
@@ -82,6 +83,11 @@ public class ReservationListResults extends javax.swing.JFrame {
         jLabel4.setText("Room");
 
         jButton1.setText("Home");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -155,6 +161,13 @@ public class ReservationListResults extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         //HotelSystem.cancelReservation(reservations.get(jList1.getSelectedIndex()));
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Welcome frame = new Welcome();
+        frame.setLocationRelativeTo(this);
+        this.setVisible(false);
+        frame.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
    
     public void setList(ArrayList<Reservation> reservations) {
         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");

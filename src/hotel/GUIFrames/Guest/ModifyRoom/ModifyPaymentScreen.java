@@ -30,7 +30,7 @@ public class ModifyPaymentScreen extends javax.swing.JFrame {
         double totalCost = currentReservation.getReservationTotal();
         double newTotal = newReservation.getReservationTotal();
 
-        amountOwed_label.setText("$" + Double.toString(totalCost - newTotal));
+        amountOwed_label.setText("$" + Double.toString((totalCost - newTotal) * -1));
         
         this.currentReservation = currentReservation;
         this.newReservation = newReservation;

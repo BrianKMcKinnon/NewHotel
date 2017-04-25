@@ -5,6 +5,7 @@
  */
 package hotel.GUIFrames.Employee;
 
+import hotel.GUIFrames.Welcome;
 import hotel.Room;
 
 /**
@@ -59,6 +60,11 @@ public class Manage extends javax.swing.JFrame {
         jLabel2.setText("Welcome Employee");
 
         jButton1.setText("Home");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         queenRate_textField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         queenRate_textField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -233,6 +239,13 @@ public class Manage extends javax.swing.JFrame {
         this.setVisible(false);
         frame.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Welcome frame = new Welcome();
+        frame.setLocationRelativeTo(this);
+        this.setVisible(false);
+        frame.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

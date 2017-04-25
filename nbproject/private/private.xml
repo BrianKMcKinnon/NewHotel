@@ -2,6 +2,24 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/GUIFrames/Employee/EmployeeHome.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/GUIFrames/Guest/GuestModifyReservation.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/GUIFrames/CreateReservation.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/GUIFrames/FoundRoomResults.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/GUIFrames/Welcome.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/GUIFrames/Guest/PaymentScreen.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/GUIFrames/Guest/GuestHome.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/GUIFrames/Guest/ReservationCode.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/GUIFrames/Employee/Manage.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/GUIFrames/Guest/ModifyRoom/ModifyPaymentScreen.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/ReservationDatabase.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/GUIFrames/Guest/ModifyRoom/ModifyFoundRoomResult.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/GUIFrames/Employee/ReservationListResults.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/GUIFrames/SingleReservationResults.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/GUIFrames/Guest/GuestEnterReservation.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/HotelSystem.java</file>
+            <file>file:/C:/Users/Chandler/Documents/NetBeansProjects/NewHotel/src/hotel/GUIFrames/Employee/EmployeeSearchReservation.java</file>
+        </group>
     </open-files>
 </project-private>
